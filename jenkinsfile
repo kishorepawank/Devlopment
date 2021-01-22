@@ -5,6 +5,9 @@ parameters {
   booleanParam defaultValue: true, description: '', name: 'do you want to contiue'
   choice choices: ['dev', 'stage', 'prod'], description: 'number of stages', name: 'enter env'
 }
+options {
+  timestamps
+}
     stages {
         stage('Build') { 
             steps {
