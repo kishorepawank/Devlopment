@@ -6,7 +6,7 @@ parameters {
   choice choices: ['dev', 'stage', 'prod'], description: 'number of stages', name: 'enter env'
 }
 options {
-  timestamps
+  timestamps ()
 }
     stages {
         stage('Build') { 
