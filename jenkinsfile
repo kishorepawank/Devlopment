@@ -12,6 +12,7 @@ options {
         stage('Build') { 
             steps {
                 echo "this is Build"
+                echo ${Env}
             }
         }
         stage('Test') { 
