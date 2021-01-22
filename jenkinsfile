@@ -13,14 +13,6 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                input {
-                    message 'Do you want to deploy, please approve'
-                    ok 'APProve'
-                    parameters {
-                        booleanParam defaultValue: false, description: '', name: 'approved'
-                    }
-                }
-
                echo "this is Deploy"
             }
         }
