@@ -7,7 +7,7 @@ parameters {
 }
 options {
   timestamps ()
-  anciColor('xterm')
+  ansiColor('xterm')
 }
     stages {
         stage('Build') { 
