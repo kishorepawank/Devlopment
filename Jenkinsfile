@@ -2,21 +2,38 @@ pipeline {
     agent any
     stages{
         stage('Get code from SCM') {
-            checkout(
-                    [$class: 'GitSCM', branches: [[name: '*/master']],
-                     doGenerateSubmoduleConfigurations: false,
-                     extensions: [],
-                     submoduleCfg: [],
-                     userRemoteConfigs: [[url: 'https://github.com/kishorepawank/Devlopment']]]
-            )
+            steps{
+                step{
+                checkout(
+                        [$class: 'GitSCM', branches: [[name: '*/master']],
+                         doGenerateSubmoduleConfigurations: false,
+                         extensions: [],
+                         submoduleCfg: [],
+                         userRemoteConfigs: [[url: 'https://github.com/kishorepawank/Devlopment']]]
+                )                    
+                }
+            }
+
         }
 
         stage('Composer Install') {
-            sh 'echo install'
+            steps{
+                step{
+                    sh 'echo install'                
+                }
+                
+            }
+
         }
 
         stage("PHPLint") {
-            sh 'ls -lrth'
+            steps{
+                step{
+                    sh 'ls -lrth'                    
+                }
+            }
+            
+
         }        
     }
 
